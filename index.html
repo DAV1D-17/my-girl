@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Te Amo! - Animación Especial</title>
+    <style>
+       
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fce4ec; 
+            overflow: hidden; 
+            font-family: 'Arial', sans-serif;
+        }
+
+       
+        .message-container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 10; 
+        }
+
+        
+        .animated-text {
+            font-size: 5em;
+            color: #e91e63; 
+            animation: pulse 2s infinite alternate; 
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        
+        .subtitle {
+            font-size: 1.5em;
+            color: #880e4f;
+            margin-top: 10px;
+        }
+
+      
+         
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+       
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff79b0; 
+            transform: rotate(-45deg);
+            z-index: 5;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: inherit;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 10px;
+        }
+
+      
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(-45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(-45deg); /* Se mueve 1000px hacia arriba */
+                opacity: 0;
+            }
+        }
+
+        
+        .heart:nth-child(1) {
+            left: 10%;
+            animation: float 10s infinite;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 30%;
+            width: 15px;
+            height: 15px;
+            animation: float 8s infinite;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 50%;
+            background: #ffcdd2; 
+            animation: float 12s infinite;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 70%;
+            width: 25px;
+            height: 25px;
+            animation: float 9s infinite;
+            animation-delay: 6s;
+        }
+
+        .heart:nth-child(5) {
+            left: 90%;
+            animation: float 11s infinite;
+            animation-delay: 8s;
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <p class="animated-text">Me Gustas:3</p>
+        <p class="subtitle">hay que tener secso</p>
+    </div>
+
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+
+    
+</body>
+</html>
